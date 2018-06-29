@@ -5,8 +5,12 @@
     //python的autopep8格式化，限制最大宽度是100字符
     "python.formatting.autopep8Args": [
         "--max-line-length=100",
-        "--indent-size=2"
+        "--indent-size=4"
     ],
+    // 设置flake8的参数，现在最大宽度是100字符
+    "python.linting.flake8Args": [
+        "--max-line-length=100"
+    ]
     // 保存时设置文件的格式。格式化程序必须可用，不能自动保存文件，并且不能关闭编辑器。
     "editor.formatOnSave": true,
     //设置了pylint一些警告、错误提示的参数
@@ -19,7 +23,7 @@
     // 启用后，将在保存文件时剪裁尾随空格。
     "files.trimTrailingWhitespace": true,
     // 一个制表符等于的空格数。该设置在 "editor.detectIndentation" 启用时根据文件内容可能会被覆盖。
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     // 配置 glob 模式以在搜索中排除文件和文件夹。例如，文件资源管理器根据此设置决定文件或文件夹的显示和隐藏。
     "files.exclude": {
         "**/.git": true,
@@ -33,5 +37,11 @@
         "*/*.pyc": true
     },
     // 控制何时自动保存已更新文件
-    "files.autoSave": "onWindowChange"
+    "files.autoSave": "onWindowChange",
+    // replace pre-defined config, key:searchRegexStr, value:replaceStr
+    "autoDocstring.replacePreDefinedConfig": {
+        "/\\{\\$AUTHOR\\$\\}/g": "Huijian Li"
+    },
+    // 控制何时自动保存已更新文件
+    "files.autoSave": "off"
 }

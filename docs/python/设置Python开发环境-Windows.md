@@ -80,17 +80,28 @@ yapf ："python.formatting.provider": "yapf"   -- 测试过程中发现yapf似�
 
 ## User Setting
 
-从菜单”File->Preferences->User Settings“打开，中文菜单是”文件->首选项->设置“，搜索并自定义以下项（全部修改的配置信息可以直接从”[vscode-python-user-setting.json](media/vscode-plugin-install-off-line/vscode-python-user-setting.json)“获取）：
+从菜单”File->Preferences->User Settings“打开，中文菜单是”文件->首选项->设置“，搜索并自定义以下项（全部修改的配置信息可以直接从”[vscode-python-user-setting.json](media/vscode-python-setting-win/vscode-python-user-setting.json)“获取）：
 
 ### python.formatting.autopep8Args
 
 ```
-//python的autopep8格式化，限制最大宽度是100字符 
+// python的autopep8格式化，限制最大宽度是100字符，缩进为4个空格
 "python.formatting.autopep8Args": [
   "--max-line-length=100",
-  "--indent-size=2"
+  "--indent-size=4"
 ]
 ```
+
+### python.linting.flake8Args
+
+```
+// 设置flake8的参数，现在最大宽度是100字符
+"python.linting.flake8Args": [
+    "--max-line-length=100"
+]
+```
+
+
 
 ### editor.formatOnSave
 
@@ -102,7 +113,7 @@ yapf ："python.formatting.provider": "yapf"   -- 测试过程中发现yapf似�
 ### python.linting.pylintArgs
 
 ```
-//设置了pylint一些警告、错误提示的参数
+// 设置了pylint一些警告、错误提示的参数
 "python.linting.pylintArgs": [
   "--include-naming-hint=n",
   "--disable=W0311",
@@ -122,7 +133,7 @@ yapf ："python.formatting.provider": "yapf"   -- 测试过程中发现yapf似�
 
 ```
 // 一个制表符等于的空格数。该设置在 "editor.detectIndentation" 启用时根据文件内容可能会被覆盖。
-"editor.tabSize": 2
+"editor.tabSize": 4
 ```
 
 ### files.exclude
