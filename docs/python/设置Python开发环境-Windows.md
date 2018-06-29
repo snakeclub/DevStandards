@@ -56,7 +56,7 @@
 
 autopep8 ： "python.formatting.provider": "autopep8" 
 
-yapf ："python.formatting.provider": "yapf" 
+yapf ："python.formatting.provider": "yapf"   -- 测试过程中发现yapf似乎有问题
 
 
 
@@ -223,3 +223,19 @@ for target_list in expression_list:
 | F10                  | 跳过 Step over                                              |
 | Ctrl+K Ctrl+I        | 显示悬停 Show hover                                         |
 
+## 作者推荐安装的Snippets代码片段
+
+[keybindings.json](keybindings.json) ：
+
+修改位置：文件>首选项>按键快捷方式
+
+- ctrl+shift+3 : 调出注释标签选择菜单（可以在鼠标定位在注释中执行）
+- ctrl+shift+4 : 调出数据类型（type）选择菜单（可以在鼠标定位在注释中执行）
+- ctrl+shift+5 : 调出异常类型（exception）选择菜单（可以在鼠标定位在注释中执行）
+
+[python.json](python.json)
+
+修改位置：文件>首选项>用户代码片段，然后选择python.json
+
+- 输入“.c”获取代码片段（c代表code）
+- 输入“.n”获取注释片段（n代表note）

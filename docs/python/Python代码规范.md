@@ -392,8 +392,6 @@ descript ：类的具体描述
 
 @decorators <name> - [descript] : 说明函数所带的修饰符描述，每一个修饰符一个标签（非JSDoc标签）
 
-@api {action-type} <url> <api-name> : 标识函数是对外提供的api，action-type 为调用api的方法，根据实际设计提供（http方法有：get、post、delete）；url为api的访问地址；api-name为api的命名（或标识）
-
 @param {type} <paraname> - <descript> : 函数的参数定义
 
 ​	type  ：为参数的数据类型，如果允许任何类型，填入*；如果支持几种特定类型，通过竖线"|"分隔
@@ -409,6 +407,8 @@ descript ：类的具体描述
 @throws {exception-type} - <descript> : 说明可能会被抛出什么样的错误，每一种异常一个标签
 
 **选填标签：**
+
+@api {action-type} <url> <api-name> : 标识函数是对外提供的api，action-type 为调用api的方法，根据实际设计提供（http方法有：get、post、delete）；url为api的访问地址；api-name为api的命名（或标识）
 
 @abstract ：标识类是抽象对象，需子类重载实现相关内容
 
