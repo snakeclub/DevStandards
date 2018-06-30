@@ -7,6 +7,10 @@ My docs for dev tools install and code standards
 
 [Github开源项目贡献流程](/docs/git/open-source-project-contribution-process.md)
 
+[Commitizen在Windows的安装使用手册](/docs/git/commitizen-windows.md)
+
+[npm用法及离线安装方法](/docs/git/npm用法及离线安装方法.md)
+
 
 
 ## VSCode相关
