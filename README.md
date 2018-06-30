@@ -3,6 +3,12 @@ My docs for dev tools install and code standards
 
 
 
+## GIT相关
+
+[Github开源项目贡献流程](/docs/git/open-source-project-contribution-process.md)
+
+
+
 ## VSCode相关
 
 [VSCode 插件离线安装](/docs/vscode/VSCode 插件离线安装.md)
