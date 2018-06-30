@@ -80,7 +80,7 @@ yapf ："python.formatting.provider": "yapf"   -- 测试过程中发现yapf似�
 
 ## User Setting
 
-从菜单”File->Preferences->User Settings“打开，中文菜单是”文件->首选项->设置“，搜索并自定义以下项（全部修改的配置信息可以直接从”[vscode-python-user-setting.json](media/vscode-python-setting-win/vscode-python-user-setting.json)“获取）：
+从菜单”File->Preferences->User Settings“打开，中文菜单是”文件->首选项->设置“，搜索并自定义以下项（全部修改的配置信息可以直接从”[settings.json](settings.json)“获取）：
 
 ### python.formatting.autopep8Args
 

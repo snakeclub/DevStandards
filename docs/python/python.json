@@ -50,10 +50,10 @@
 			"if __name__ == '__main__':",
 			"\t# 当程序自己独立运行时执行的操作",
 			"\t# 打印版本信息",
-			"\tprint('''模块名：%s  -  %s",
-			"\t作者：%s",
-			"\t发布日期：%s",
-			"\t版本：%s''' % (__MOUDLE__, __DESCRIPT__, __AUTHOR__, __PUBLISH__, __AUTHOR__))",
+			"\tprint(('模块名：%s  -  %s\n'",
+			"\t\t   '作者：%s\n'",
+			"\t\t   '发布日期：%s\n'",
+			"\t\t   '版本：%s' % (__MOUDLE__, __DESCRIPT__, __AUTHOR__, __PUBLISH__, __AUTHOR__)))",
 			"\t$0"
 		],
 		"description": "添加通用打印的运行代码"
@@ -153,5 +153,43 @@
 			"$0"
 		],
 		"description": "@typedef注释"
+	},
+	"add note split": {
+		"prefix": ".nSplit",
+		"body": [
+			"#############################",
+			"# $1",
+			"#############################",
+			"$0"
+		],
+		"description": "代码分隔注释"
+	},
+	"add note InitPara": {
+		"prefix": ".nInitPara",
+		"body": [
+			"# 初始化可变参数",
+			"$0"
+		],
+		"description": "初始化可变参数注释"
+	},
+	"add note ApacheCopyright": {
+		"prefix": ".nApacheCopyright",
+		"body": [
+			"# Copyright 2018 黎慧剑",
+			"# ",
+			"# Licensed under the Apache License, Version 2.0 (the \"License\");",
+			"# you may not use this file except in compliance with the License.",
+			"# You may obtain a copy of the License at",
+			"# ",
+			"#  http://www.apache.org/licenses/LICENSE-2.0",
+			"# ",
+			"# Unless required by applicable law or agreed to in writing, software",
+			"# distributed under the License is distributed on an \"AS IS\" BASIS,",
+			"# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
+			"# See the License for the specific language governing permissions and",
+			"# limitations under the License.",
+			"$0"
+		],
+		"description": "添加版权"
 	}
 }
