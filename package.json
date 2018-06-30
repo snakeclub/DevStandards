@@ -1,0 +1,29 @@
+{
+  "name": "DevStandards",
+  "version": "1.1.0",
+  "description": "My docs for dev tools install and code standards",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snakeclub/DevStandards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snakeclub/DevStandards/issues"
+  },
+  "homepage": "https://github.com/snakeclub/DevStandards#readme",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
