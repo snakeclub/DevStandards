@@ -15,7 +15,16 @@
         "--disable=W0311",
         "--disable=C0103",
         "--disable=C0302",
-        "--disable=E1101"
+        "--disable=E1101",
+        "--disable=R0911",
+        "--disable=R0912",
+        "--disable=R0913",
+        "--disable=R0915",
+        "--disable=W0122",
+        "--disable=W0703",
+        "--disable=W0123",
+        "--disable=E0401", // import找不到模块异常
+        "--disable=C1801" // 不要使用len判断序列是否空
     ],
     // 启用后，将在保存文件时剪裁尾随空格。
     "files.trimTrailingWhitespace": true,
@@ -44,7 +53,7 @@
     "autoDocstring.docstringFormat": "snakerpy",
     "terminal.integrated.rendererType": "dom",
     // 以像素为单位控制字号。
-    "editor.fontSize": 18,
+    "editor.fontSize": 14,
     // replace pre-defined config, key:searchRegexStr, value:replaceStr
     "autoDocstring.replacePreDefinedConfig": {
         "/\\{\\$AUTHOR\\$\\}/g": "黎慧剑"

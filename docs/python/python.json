@@ -53,7 +53,7 @@
 			"\tprint(('模块名：%s  -  %s\n'",
 			"\t\t   '作者：%s\n'",
 			"\t\t   '发布日期：%s\n'",
-			"\t\t   '版本：%s' % (__MOUDLE__, __DESCRIPT__, __AUTHOR__, __PUBLISH__, __AUTHOR__)))",
+			"\t\t   '版本：%s' % (__MOUDLE__, __DESCRIPT__, __AUTHOR__, __PUBLISH__, __VERSION__)))",
 			"\t$0"
 		],
 		"description": "添加通用打印的运行代码"
