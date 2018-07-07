@@ -5,6 +5,8 @@ My docs for dev tools install and code standards
 
 ## GIT相关
 
+[git入门介绍](/docs/git/git入门介绍.md)
+
 [Github开源项目贡献流程](/docs/git/open-source-project-contribution-process.md)
 
 [Commitizen在Windows的安装使用手册](/docs/git/commitizen-windows.md)
