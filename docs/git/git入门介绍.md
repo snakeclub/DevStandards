@@ -304,21 +304,15 @@ $ cat .gitignore
 
 所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。 星号（\*）匹配零个或多个任意字符；[abc] 匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（?）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配（比如 [0-9] 表示匹配所有 0 到 9 的数字）。 使用两个星号（\*) 表示匹配任意中间目录，比如`a/**/z` 可以匹配 `a/z,` `a/b/z` 或 `a/b/c/z`等。
 
-
-
 ##### 将新文件或已修改文件加入暂存
 
 `$ git add新文件或已修改文件的文件名`（可以用\*代表所有）
-
-
 
 ##### 查看已暂存和未暂存的修改
 
 `$ git diff`  (查看尚未暂存的文件更新了哪些部分)
 `$ git diff --staged` (查看已暂存的将要添加到下次提交里的内容)
 如果你喜欢通过图形化的方式或其它格式输出方式的话，可以使用 `git difftool` 命令来用 Araxis ，emerge 或 vimdiff 等软件输出 diff 分析结果。 使用 `git difftool --tool-help` 命令来看你的系统支持哪些 Git Diff 插件。
-
-
 
 ##### 移除文件
 
@@ -339,20 +333,14 @@ $ git rm \*~
 
 该命令为删除以 ~ 结尾的所有文件。
 
-
-
 ##### 移动文件
 
 `$ git mv file_from file_to`  （移动文件路径，或进行改名处理）
-
-
 
 ##### 提交更新
 
 `$ git commit -m '提交版本说明'`
 `$ git commit -a -m '提交版本说明'`  (通过-a参数，可以不用将修改放到暂存就直接提交)
-
-
 
 ##### 补充提交
 
@@ -364,8 +352,6 @@ $ git add forgotten_file
 $ git commit --amend
 ```
 
-
-
 ##### 取消暂存的文件
 
 有时候我们希望分多次提交不同的文件，但执行过程中不小心都提交到了暂存，可以通过reset命令将暂存的文件回退到修改状态。
@@ -373,8 +359,6 @@ $ git commit --amend
 ```
 $ git reset HEAD <file>
 ```
-
-
 
 ##### 撤消对文件的修改
 
@@ -386,8 +370,6 @@ $ git checkout -- <file>
 
 注意：你需要知道 `git checkout -- [file]` 是一个危险的命令，这很重要。 你对那个文件做的任何修改都会消失 - 你只是拷贝了另一个文件来覆盖它。 除非你确实清楚不想要那个文件了，否则不要使用这个命令
 
-
-
 ##### 回退到某一个提交
 
 `$ git log`   (查看提交历史，找到要回滚的提交ID)
@@ -397,8 +379,6 @@ $ git checkout -- <file>
 或（远程服务器方式）
 `$ git reset --hard A1`  //本地回退到A1版本
 `$ git push -f origin dev` //强制推送到远程仓库的 dev分支
-
-
 
 ##### 查看提交历史
 
@@ -456,15 +436,11 @@ a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
 $ git tag -a v1.2 9fceb02
 ```
 
-
-
 ##### 查看标签
 
 `$ git tag`  （列出标签）
 `$ git show v1.4`  （查看指定标签及对应的提交信息）
 `$ git tag -l 'v1.8.5*'`  （查找特定标签）
-
-
 
 ##### 推送标签到服务端
 
@@ -481,7 +457,29 @@ $ git push origin v1.5
 $ git push origin --tags
 ```
 
+##### 删除标签
 
+如果未推送到服务器端的标签打错了，也可以删除，创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除 ：
+
+```
+$ git tag -d v0.1
+Deleted tag 'v0.1' (was f15b0dd)
+```
+
+如果标签已经推送到远程，要删除远程标签就麻烦一点，先从本地删除： 
+
+```
+$ git tag -d v0.9
+Deleted tag 'v0.9' (was f52c633)
+```
+
+然后，从远程删除。删除命令也是push，但是格式如下： 
+
+```
+$ git push origin :refs/tags/v0.9
+To github.com:michaelliao/learngit.git
+ - [deleted]         v0.9
+```
 
 ##### 检出指定标签版本
 
@@ -510,16 +508,12 @@ $ git branch iss53   （在当前快照创建一个名为iss53的分支）
 $ git checkout iss53    （切换到该分支上）
 ```
 
-
-
 ##### 切换到指定分支
 
 ```
 $ git checkout master
 Switched to branch 'master'
 ```
-
-
 
 ##### 合并分支
 
@@ -548,16 +542,12 @@ please contact us at email.support@github.com
 
 上述的冲突解决方案仅保留了其中一个分支的修改，并且 <<<<<<< , ======= , 和 >>>>>>> 这些行被完全删除了。 在你解决了所有文件里的冲突之后，对每个文件使用 `git add` 命令来将其标记为冲突已解决。 一旦暂存这些原本有冲突的文件，Git 就会将它们标记为冲突已解决。
 
-
-
 ##### 删除分支
 
 ```
 $ git branch -d hotfix  （在分支不再使用时可以删除分支，如果还有未合并工作，无法删除；可以用-D强制删除）
 Deleted branch hotfix (3a0874c).
 ```
-
-
 
 ##### 分支查看
 
@@ -586,8 +576,6 @@ $ git branch --merged
   testing
 ```
 
-
-
 ##### 远程分支
 
 ```
@@ -605,7 +593,7 @@ $ git push origin --delete serverfix  （从服务器上删除一个远程分支
 #### 在GitLab上创建项目
 
 1. 在首页（https://github.com/）上点击“New Repository”按钮，添加一个新项目；
-  ![](/media/git-introduce/06.png)
+    ![](/media/git-introduce/06.png)
 2. 输入项目名仓库（Repository name）、描述、选择公开还是私有（私有要收费）、选择导入README文档、选择忽略文件和许可类型，然后创建：
 3. 重新打开首页找到自己的仓库位置，点击“Clone or download”按钮，获取到服务端的提交协议地址：https://github.com/snakeclub/FCMM.git
 
