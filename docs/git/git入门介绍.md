@@ -584,6 +584,10 @@ $ git checkout --track origin/serverfix （创建跟踪分支，分支名与服�
 $ git checkout -b sf origin/serverfix  (创建跟踪分支，自定义本地分支名)
 $ git branch -vv （将所有的本地分支列出来并且包含更多的信息，如每一个分支正在跟踪哪个远程分支与本地分支是否是领先、落后或是都有）
 $ git push origin --delete serverfix  （从服务器上删除一个远程分支）
+$ git branch -a   (查看所有分支，含远程分支)
+$ git branch -r   （查看远程分支列表）
+$ git checkout remotes/origin/lb-pkg   (直接切换到远程分支-在没有建立本地跟踪分支的情况)
+$ git checkout --track origin/lb-pkg   (查到远程分支，可以通过该命令建立本地分支的关连追踪)
 ```
 
 
