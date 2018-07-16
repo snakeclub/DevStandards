@@ -53,7 +53,7 @@
     "autoDocstring.docstringFormat": "snakerpy",
     "terminal.integrated.rendererType": "dom",
     // 以像素为单位控制字号。
-    "editor.fontSize": 14,
+    "editor.fontSize": 18,
     // replace pre-defined config, key:searchRegexStr, value:replaceStr
     "autoDocstring.replacePreDefinedConfig": {
         "/\\{\\$AUTHOR\\$\\}/g": "黎慧剑"
