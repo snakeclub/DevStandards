@@ -30,3 +30,27 @@ My docs for dev tools install and code standards
 [Python代码规范](docs/python/Python代码规范.md)
 
 [设置Python开发环境-Windows](docs/python/设置Python开发环境-Windows.md)
+
+
+
+## Maven相关
+
+[Maven学习总结(一)——Maven入门](docs/maven/maven-study1--beginer.md)
+
+[Maven学习总结(二)——Maven项目构建过程练习](docs/maven/maven-study2--practice.md)
+
+[Maven学习总结(三)——使用Maven构建项目](docs/maven/maven-study3--create-project.md)
+
+[Maven学习总结(四)——Maven核心概念](docs/maven/maven-study4--core-design.md)
+
+[Maven学习总结(五)——聚合与继承](docs/maven/maven-study5--inherit.md)
+
+[Maven学习总结(六)——Maven与Eclipse整合](docs/maven/maven-study6--eclipse.md)
+
+[Maven学习总结(七)——eclipse中使用Maven创建Web项目](docs/maven/maven-study7--eclipse-webapp.md)
+
+[Maven学习总结(八)——使用Maven构建多模块项目](docs/maven/maven-study8--mutiple-project.md)
+
+[Maven学习总结(九)——使用Nexus搭建Maven私服](docs/maven/maven-study9--self-repo.md)
+
+[使用Maven编译项目遇到——“maven编码gbk的不可映射字符”解决办法](docs/maven/maven-studyx--gbk.md)
