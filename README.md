@@ -54,3 +54,5 @@ My docs for dev tools install and code standards
 [Maven学习总结(九)——使用Nexus搭建Maven私服](docs/maven/maven-study9--self-repo.md)
 
 [使用Maven编译项目遇到——“maven编码gbk的不可映射字符”解决办法](docs/maven/maven-studyx--gbk.md)
+
+[Nexus私有仓库搭建与Maven集成.md](docs/maven/Nexus私有仓库搭建与Maven集成.md)
