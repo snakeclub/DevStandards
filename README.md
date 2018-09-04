@@ -64,3 +64,14 @@ My docs for dev tools install and code standards
 [使用Maven编译项目遇到——“maven编码gbk的不可映射字符”解决办法](docs/maven/maven-studyx--gbk.md)
 
 [Nexus私有仓库搭建与Maven集成.md](docs/maven/Nexus私有仓库搭建与Maven集成.md)
+
+
+
+## 临时参考材料
+
+### 测试相关
+
+[转载-开发人员看测试之TDD和BDD.md](docs/beginer/test/转载-开发人员看测试之TDD和BDD.md)
+
+[转载-利用 Behavior Driven Development 技术加强软件自动化测试.md](docs/beginer/test/转载-利用 Behavior Driven Development 技术加强软件自动化测试.md)
+
