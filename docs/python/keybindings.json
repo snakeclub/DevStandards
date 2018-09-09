@@ -26,5 +26,15 @@
         "args": {
             "snippet": "${1|AttributeError,IoError,ImportError,IndentationError,KeyError,KeyboardInterrupt,NameError,SyntaxError,TypeError,UnboundLocalError,ZeroDivisonError,ValueError|}"
         }
+    },
+    {
+        "key": "enter",
+        "command": "acceptSelectedSuggestion",
+        "when": "editorTextFocus && suggestWidgetVisible"
+    },
+    {
+        "key": "tab",
+        "command": "editor.emmet.action.expandAbbreviation",
+        "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorHasSelection && !editorReadonly && !editorTabMovesFocus"
     }
 ]

@@ -1,6 +1,6 @@
 {
     "workbench.colorTheme": "Visual Studio Dark",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "editor.renderIndentGuides": false,
     //python的autopep8格式化，限制最大宽度是100字符
     "python.formatting.autopep8Args": [
@@ -61,6 +61,9 @@
     // Arguments passed in. Each argument is a separate item in the array.
     "python.linting.flake8Args": [
         "--max-line-length=100",
-        "--ignore=E501,E228,E226,E261,E266,E128,E402,E241,E124"
-    ]
+        "--ignore=E501,E228,E226,E261,E266,E128,E402,E241,E124,F401"
+    ],
+    // When enabled, Emmet abbreviations are expanded when pressing TAB.
+    "emmet.triggerExpansionOnTab": true,
+    "explorer.confirmDelete": false
 }

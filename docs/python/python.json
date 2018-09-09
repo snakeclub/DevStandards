@@ -37,9 +37,9 @@
 		"prefix": ".cModule/var",
 		"body": [
 			"__MOUDLE__ = '$TM_FILENAME_BASE'  # 模块名",
-			"__DESCRIPT__ = '$1'  # 模块描述",
+			"__DESCRIPT__ = u'$1'  # 模块描述",
 			"__VERSION__ = '{\\$VERSION$}'  # 版本",
-			"__AUTHOR__ = '{\\$AUTHOR$}'  # 作者",
+			"__AUTHOR__ = u'{\\$AUTHOR$}'  # 作者",
 			"__PUBLISH__ = '${CURRENT_YEAR}.${CURRENT_MONTH}.${CURRENT_DATE}'  # 发布日期",
 		],
 		"description": "添加模块公共信息变量"
@@ -190,6 +190,18 @@
 			"# limitations under the License.",
 			"$0"
 		],
-		"description": "添加版权"
+		"description": "添加Apache版权"
+	},
+	"add note MPLCopyright": {
+		"prefix": ".nMPLCopyright",
+		"body": [
+			"# Copyright 2018 黎慧剑",
+			"# ",
+			"# This Source Code Form is subject to the terms of the Mozilla Public",
+			"# License, v. 2.0. If a copy of the MPL was not distributed with this",
+			"# file, You can obtain one at http://mozilla.org/MPL/2.0/.",
+			"$0"
+		],
+		"description": "添加MPL版权"
 	}
 }
