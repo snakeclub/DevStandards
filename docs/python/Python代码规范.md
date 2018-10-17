@@ -278,7 +278,6 @@ Python的Docstring规范有多个标准，包括Google、numpy等，本规范为
 
 - 其他具体类实例：应为类的全路径，例如package.ClassName
 
-  
 
 ### @typedef
 
@@ -303,8 +302,6 @@ Python的Docstring规范有多个标准，包括Google、numpy等，本规范为
 
 以下标签为所有注释都可以选填的标签：
 
-@summary <Summary goes here>：标签后完整描述的一个简写版本（一行内），位置必须紧跟[descript]
-
 @example ： 提供一个如何使用描述项的例子，示例内容在标签下方
 
 @deprecated [<some text>]：标签指明一个该对象在你代码中已经被弃用，可以后面带描述或没有
@@ -328,6 +325,7 @@ Python的Docstring规范有多个标准，包括Google、numpy等，本规范为
 ```
 """
 <descript>
+
 @module <fullname>
 @file <filename>
 """
@@ -335,7 +333,7 @@ Python的Docstring规范有多个标准，包括Google、numpy等，本规范为
 
 **必填标签：**
 
-descript ：模块的具体描述
+descript ：模块的具体描述，第1行为简写说明，第2行开始可以为多行的详细说明，注意descript多行说明之间不能有空行，所有说明结束后必须有一行空行
 
 @module <fullname> ：模块全路径名（含所在的包名），例如snakerlib.prompt_pro
 
@@ -362,16 +360,19 @@ descript ：模块的具体描述
 ```
 """
 <descript>
+
 """
 ```
 
 **必填标签：**
 
-descript ：类的具体描述
+descript ：类的具体描述，第1行为简写说明，第2行开始可以为多行的详细说明，注意descript多行说明之间不能有空行，所有说明结束后必须有一行空行
 
 **选填标签：**
 
 @abstract ：标识类是抽象类，需子类重载实现相关内容
+
+@function \<fun_name(...)\> - \<\desc> :  标识类中的公共函数
 
 
 
@@ -394,13 +395,13 @@ descript ：类的具体描述
 
 @param {type} <paraname> - <descript> : 函数的参数定义
 
-​	type  ：为参数的数据类型，如果允许任何类型，填入*；如果支持几种特定类型，通过竖线"|"分隔
+	type  ：为参数的数据类型，如果允许任何类型，填入*；如果支持几种特定类型，通过竖线"|"分隔
 
-​	paraname ： 参数名，如果为可选参数，paraname要用中括号"[ ]"标识（例如"[filepath]"）；如果参数有默认值，参数名后面带默认值，例如"[filepath]='c:/'"
+	paraname ： 参数名，如果为可选参数，paraname要用中括号"[ ]"标识（例如"[filepath]"）；如果参数有默认值，参数名后面带默认值，例如"[filepath]='c:/'"
 
-​	descript ： 参数描述
+	descript ： 参数描述
 
-​	注：paraname 与descript 之间用 “ - ”分隔；如果描述有多行，应进行格式的缩进处理
+	注：paraname 与descript 之间用 “ - ”分隔；如果描述有多行，应进行格式的缩进处理
 
 @returns {type} - <descript> :  标签描述一个函数的返回值，type与@param的定义一致
 

@@ -21,6 +21,8 @@ My docs for dev tools install and code standards
 
 [RUDP协议简介](/docs/api/RUDP协议简介.md)
 
+[错误码规范](/docs/api/错误码规范.md)
+
 
 
 ## VSCode相关
@@ -38,6 +40,8 @@ My docs for dev tools install and code standards
 [Python代码规范](docs/python/Python代码规范.md)
 
 [设置Python开发环境-Windows](docs/python/设置Python开发环境-Windows.md)
+
+[将python包发布到PyPI和制作whl文件](docs/python/将python包发布到PyPI和制作whl文件.md)
 
 
 
