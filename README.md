@@ -43,6 +43,8 @@ My docs for dev tools install and code standards
 
 [将python包发布到PyPI和制作whl文件](docs/python/将python包发布到PyPI和制作whl文件.md)
 
+[使用Sphinx自动生成文档](docs/python/使用Sphinx自动生成文档.md)
+
 
 
 ## Maven相关

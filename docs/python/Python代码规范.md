@@ -253,6 +253,12 @@ FIXME 表示需要修复的bug，优先级比TODO高，有助于发现问题时�
 
 Python的Docstring规范有多个标准，包括Google、numpy等，本规范为作者自定义的SnakerPy规范，因为平常也会开发Javascript等代码，因此在标签定义上统一参考JSDoc的规范，减少多个规范的学习成本。JSDoc的详细标签格式可参考《[JSDoc中文文档](http://www.css88.com/doc/jsdoc/index.html)》。
 
+有几个注意的规范内容：
+
+1、<descript>注释必须与后面的其他注释空一个空行（多行注释内容连在一起）；
+
+2、注释的结尾必须有一个空行。
+
 ### Python类型
 
 - number : Number（数字）
@@ -288,7 +294,9 @@ Python的Docstring规范有多个标准，包括Google、numpy等，本规范为
 ```
 """
 <descript>
+
 @typedef {(type1|type2)} typename - [type-descript]
+
 """
 ```
 
@@ -328,6 +336,7 @@ Python的Docstring规范有多个标准，包括Google、numpy等，本规范为
 
 @module <fullname>
 @file <filename>
+
 """
 ```
 
@@ -368,6 +377,8 @@ descript ：模块的具体描述，第1行为简写说明，第2行开始可以
 
 descript ：类的具体描述，第1行为简写说明，第2行开始可以为多行的详细说明，注意descript多行说明之间不能有空行，所有说明结束后必须有一行空行
 
+**注：类初始化函数\_\_init\_\_的函数注释可以写在类注释中**
+
 **选填标签：**
 
 @abstract ：标识类是抽象类，需子类重载实现相关内容
@@ -383,9 +394,11 @@ descript ：类的具体描述，第1行为简写说明，第2行开始可以为
 ```
 """
 <descript>
+
 @param {type} <paraname> - <descript>
 @returns {type} - <descript>
 @throws {exception-type} - <descript>
+
 """
 ```
 
@@ -396,11 +409,11 @@ descript ：类的具体描述，第1行为简写说明，第2行开始可以为
 @param {type} <paraname> - <descript> : 函数的参数定义
 
 	type  ：为参数的数据类型，如果允许任何类型，填入*；如果支持几种特定类型，通过竖线"|"分隔
-
+	
 	paraname ： 参数名，如果为可选参数，paraname要用中括号"[ ]"标识（例如"[filepath]"）；如果参数有默认值，参数名后面带默认值，例如"[filepath]='c:/'"
-
+	
 	descript ： 参数描述
-
+	
 	注：paraname 与descript 之间用 “ - ”分隔；如果描述有多行，应进行格式的缩进处理
 
 @returns {type} - <descript> :  标签描述一个函数的返回值，type与@param的定义一致
@@ -428,7 +441,9 @@ descript ：类的具体描述，第1行为简写说明，第2行开始可以为
 ```
 """
 <descript>
+
 @property {type}
+
 """
 ```
 
@@ -453,12 +468,14 @@ descript ：类的具体描述，第1行为简写说明，第2行开始可以为
 def server_opts(self):
 """
 获取/设置服务器启动参数
+
 @property {object}
 @example
 	//获取
 	opts = serverobj.server_opts
 	//修改
 	serverobj.server_opts = opts
+	
 """
     return self._server_opts
 
@@ -476,7 +493,9 @@ def server_opts(self, value):
 ```
 """
 <descript>
+
 @enum {type}
+
 """
 ```
 
@@ -490,7 +509,9 @@ def server_opts(self, value):
 class EnumColunmType(Enum):
 """
 数据字段类型
+
 @enum {int}
+
 """
     Int = 0  # 整型数字
     Number = 1  # 数字类型（需指定精度）
