@@ -16,6 +16,7 @@
 pip install -U Sphinx
 pip install sphinx_rtd_theme
 pip install sphinx_bootstrap_theme
+pip install recommonmark   # 支持markdown格式文档
 ```
 
 注：sphinx_bootstrap_theme的官网：https://sphinx-bootstrap-theme.readthedocs.io/en/latest/
@@ -75,7 +76,7 @@ translate text that it generates into that language.
 For a list of supported codes, see
 http://sphinx-doc.org/config.html#confval-language.
 ##### 项目语言
-> Project language [en]: zh_cn
+> Project language [en]: zh_CN
 
 The file name suffix for source files. Commonly, this is either ".txt"
 or ".rst".  Only files with this suffix are considered documents.
@@ -209,14 +210,117 @@ napoleon_use_keyword = True
 napoleon_custom_sections = None
 ```
 
+### 支持MarkDown文档
+
+```
+# 支持MarkDown需导入
+import recommonmark
+from recommonmark.parser import CommonMarkParser
+from recommonmark.transform import AutoStructify
+
+
+# source_suffix = '.rst' 修改为支持md文档
+source_suffix = ['.rst', '.md']
+
+# 支持markdown文档
+source_parsers = {
+   '.md': 'recommonmark.parser.CommonMarkParser',
+}
+
+# 增加启动处理
+# app setup hook
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+        #'url_resolver': lambda url: github_doc_root + url,
+        'auto_toc_tree_section': 'Contents',
+        'enable_eval_rst': True,
+        'enable_auto_doc_ref': True,
+    }, True)
+    app.add_transform(AutoStructify)
+```
+
 
 
 ## 生成API文档索引（rst）
 
-执行以下命令，执行所在路径是docs，注意前面的路径是源文件路径，后面的路径是项目路径
+### 使用sphinx-apidoc生成代码文档索引
 
 ```
-docs> sphinx-apidoc -f -o ./source ../HiveNetLib
+#执行以下命令，执行所在路径是docs，注意前面的路径是源文件路径，后面的路径是项目路径，-e代表每个module一个页面，如果不用-e则代表一个package一个页面
+docs> sphinx-apidoc -f -e -d 4 -o ./source ../HiveNetLib
+```
+
+### 添加自己的文档索引
+
+新建tutorial.rst文件，用于展示概览文档，相关文档可以为md文件，注意需放置在docs/source/tutorial路径下（暂时没有研究出放其他路径的方法），tutorial.rst内容如下（:glob:用于指定通配符找文件）：
+
+```
+Tutorial
+==========
+
+.. toctree::
+   :glob:
+   
+   tutorial/*
+
+
+base_tools
+----------
+
+.. toctree::
+   :glob:
+   
+   tutorial/base_tools/*
+   
+
+net_service
+-----------
+
+.. toctree::
+   :glob:
+
+   tutorial/net_service/*
+   
+```
+
+新建standards.rst索引文件，用于指定参考规范标准文档，注意需放置在docs/source/standards下，文件内容如下：
+
+```
+Standards
+==========
+
+.. toctree::
+   :glob:
+   
+   standards/*
+
+```
+
+修改index.rst索引文件，调整主页的文档信息，修改的最终结果为（注意文档除新增tutorial、standards外，还直接引用了HiveNetLib.rst，用于展示包的结构）：
+
+```
+.. HiveNetLib documentation master file, created by
+   sphinx-quickstart on Fri Oct 19 14:07:15 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to HiveNetLib's documentation!
+======================================
+
+.. toctree::
+   
+   HiveNetLib
+   tutorial
+   standards
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
 ```
 
 

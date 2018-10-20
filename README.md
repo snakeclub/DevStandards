@@ -45,6 +45,8 @@ My docs for dev tools install and code standards
 
 [使用Sphinx自动生成文档](docs/python/使用Sphinx自动生成文档.md)
 
+[Python中文文档翻译](https://yiyibooks.cn/)
+
 
 
 ## Maven相关
