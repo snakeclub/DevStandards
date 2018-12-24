@@ -65,5 +65,6 @@
     ],
     // When enabled, Emmet abbreviations are expanded when pressing TAB.
     "emmet.triggerExpansionOnTab": true,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "editor.minimap.enabled": false
 }

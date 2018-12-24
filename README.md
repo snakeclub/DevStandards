@@ -21,7 +21,9 @@ My docs for dev tools install and code standards
 
 [RUDP协议简介](/docs/api/RUDP协议简介.md)
 
-[错误码规范](/docs/api/错误码规范.md)
+[错误码规范](https://github.com/snakeclub/HiveNetLib/blob/master/docs/source/standards/hivenet_error_code_standards_v1.1.0.md)
+
+[日志规范]([hivenet_log_standards_v1.0.0.md](https://github.com/snakeclub/HiveNetLib/blob/master/docs/source/standards/hivenet_log_standards_v1.0.0.md))
 
 
 
@@ -37,7 +39,7 @@ My docs for dev tools install and code standards
 
 ## Python相关
 
-[Python代码规范](docs/python/Python代码规范.md)
+[Python代码规范](https://github.com/snakeclub/HiveNetLib/blob/master/docs/source/standards/hivenet_python_coding_standards_v1.0.0.md)
 
 [设置Python开发环境-Windows](docs/python/设置Python开发环境-Windows.md)
 
@@ -46,6 +48,18 @@ My docs for dev tools install and code standards
 [使用Sphinx自动生成文档](docs/python/使用Sphinx自动生成文档.md)
 
 [Python中文文档翻译](https://yiyibooks.cn/)
+
+
+
+## Javascript相关
+
+[JSDoc中文文档](http://www.css88.com/doc/jsdoc/index.html)
+
+Javascript代码规范
+
+[设置Javascript开发环境-Windows](docs/javascript/设置Javascript开发环境-Windows.md)
+
+[ECMAScript 6 入门](http://es6.ruanyifeng.com/)
 
 
 

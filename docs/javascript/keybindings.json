@@ -1,0 +1,60 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    // 选择要输入的注释类型ctrl+shift+3
+    {
+        "key": "ctrl+shift+3",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus && resourceLangId == python",
+        "args": {
+            "snippet": "@${1|readonly,static,abstract,override,interface [<name>],access <private/protected/public>,summary <Summary goes here>,api {action-type} <url> <api-name>,param {type} <paraname> - <descript>,returns {type} - <descript>,throws {exception-type} - <descript>,requires <someModuleName>,decorators <name> - [descript],example,typedef {(type1\\|type2)} typename - [type-descript],todo <text describing thing to do.>,since <versionDescription>,see <namepath/text]>,tutorial <tutorialID>,ignore,deprecated [<some text>],license <identifier>,copyright <some copyright text>,author <name> [<emailAddress>],since <versionDescription>,version <text>,module <fullname>,file <filename>,property {type},enum {type}|}"
+        }
+    },
+    {
+        "key": "ctrl+shift+3",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus && resourceLangId == javascript",
+        "args": {
+            "snippet": "@${1|readonly,static,abstract,override,interface [<name>],access <private/protected/public>,summary <Summary goes here>,api {action-type} <url> <api-name>,param {type} <paraname> - <descript>,returns {type} - <descript>,throws {exception-type} - <descript>,requires <someModuleName>,decorators <name> - [descript],example,typedef {(type1\\|type2)} typename - [type-descript],todo <text describing thing to do.>,since <versionDescription>,see <namepath/text]>,tutorial <tutorialID>,ignore,deprecated [<some text>],license <identifier>,copyright <some copyright text>,author <name> [<emailAddress>],since <versionDescription>,version <text>,module <fullname>,file <filename>,property {type},enum {type}|}"
+        }
+    },
+    // 选择数据类型ctrl+shift+4
+    {
+        "key": "ctrl+shift+4",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus && resourceLangId == python",
+        "args": {
+            "snippet": "${1|number,int,float,bool,complex,string,list,tuple,set,dict,object,function|}"
+        }
+    },
+    {
+        "key": "ctrl+shift+4",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus && resourceLangId == javascript",
+        "args": {
+            "snippet": "${1|number,int,float,bool,complex,string,array,date,object,function,null,undefined|}"
+        }
+    },
+    // 选择异常类型ctrl+shift+5
+    {
+        "key": "ctrl+shift+5",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus && resourceLangId == python",
+        "args": {
+            "snippet": "${1|AttributeError,IoError,ImportError,IndentationError,KeyError,KeyboardInterrupt,NameError,SyntaxError,TypeError,UnboundLocalError,ZeroDivisonError,ValueError|}"
+        }
+    },
+    {
+        "key": "enter",
+        "command": "acceptSelectedSuggestion",
+        "when": "editorTextFocus && suggestWidgetVisible"
+    },
+    {
+        "key": "tab",
+        "command": "editor.emmet.action.expandAbbreviation",
+        "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorHasSelection && !editorReadonly && !editorTabMovesFocus"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "editor.action.showSnippets"
+    }
+]

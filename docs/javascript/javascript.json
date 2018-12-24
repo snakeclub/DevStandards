@@ -1,0 +1,177 @@
+{
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	// 代码类，键盘输入".c"开头，代表code
+	"add JQuery Control": {
+		"prefix": ".cJCtrl",
+		"body": [
+			";",
+			"(function ($) {",
+			"",
+			"    /**",
+			"    * ${2:descript}",
+			"    * 定义插件名称，避免不同插件之间相互干扰",
+			"    * @class ${1:control_name}",
+			"    */",
+			"    $.${1:control_name} = new Object();",
+			"",
+			"$0",
+			"    /**",
+			"    * 在告警框提示debug信息($.debug为true的情况下才执行)",
+			"    * @param {string} str - 要提示的信息",
+			"    */",
+			"    function debug(str) {",
+			"        if ($.debug === true) {",
+			"            alert('debug: ' + str);",
+			"        }",
+			"    };",
+			"",
+			"})(jQuery);",
+			""
+		],
+		"description": "添加JQuery方式的控件"
+	},
+	"add JQuery item function": {
+		"prefix": ".cJCtrlFunc",
+		"body": [
+			"$.fn.${1:func_name} = function (${2:para}) {",
+			"",
+			"    try {",
+			"        $0",
+			"    } catch (e) {",
+			"        debug('function ${1:func_name} exception: ' + e.toString());",
+			"    }",
+			"};",
+			""
+		],
+		"description": "添加JQuery控件对象函数"
+	},
+	"set para default value": {
+		"prefix": ".cParaDefault",
+		"body": [
+			"if (${1:para_name} === undefined) {",
+			"    ${1:para_name} = ${2:default_value};",
+			"}",
+			""
+		],
+		"description": "设置参数默认值"
+	},
+
+	// 注释部分,键盘输入".n"开头，代表node
+	"add note file": {
+		"prefix": ".nFile",
+		"body": [
+			"/**",
+			" * ${1:<descript>}",
+			" * @file (${2:{\\$FILENAME$\\}})",
+			" * @author (${3:{\\$AUTHOR$\\}})",
+			" * @version (${4:{\\$VERSION$\\}})",
+			" */",
+			"$0"
+		],
+		"description": "文件（File）注释"
+	},
+	"add note class": {
+		"prefix": ".nClass",
+		"body": [
+			"/**",
+			" * ${1:<descript>}",
+			" * @class ${2:<type> <name>}",
+			" */",
+			"$0"
+		],
+		"description": "类注释"
+	},
+	"add note todo": {
+		"prefix": ".nTodo",
+		"body": [
+			"// @todo (${1:{\\$AUTHOR$\\}}): ${2:Todo Descript}",
+			"\t$0"
+		],
+		"description": "@todo注释"
+	},
+	"add note fixme": {
+		"prefix": ".nFixme",
+		"body": [
+			"// @fixme (${1:{\\$AUTHOR$\\}}): ${2:Fixme Descript}",
+			"\t$0"
+		],
+		"description": "@fixme注释"
+	},
+	"add note typedef": {
+		"prefix": ".nTypedef",
+		"body": [
+			"/**",
+			" * ${1:<descript>}",
+			" * @typedef {(${2|number,int,float,bool,complex,string,array,date,object,function,null,undefined|})\\} ${3:typename} - ${4:[type-descript]}",
+			" */",
+			"$0"
+		],
+		"description": "@typedef注释"
+	},
+	"add note split": {
+		"prefix": ".nSplit",
+		"body": [
+			"/** ---------------------------",
+			" * $1",
+			" */",
+			"$0"
+		],
+		"description": "代码分隔注释"
+	},
+	"add note InitPara": {
+		"prefix": ".nInitPara",
+		"body": [
+			"// 初始化可变参数",
+			"$0"
+		],
+		"description": "初始化可变参数注释"
+	},
+	"add note ApacheCopyright": {
+		"prefix": ".nApacheCopyright",
+		"body": [
+			"/**",
+			" * Copyright 2018 黎慧剑",
+			" * ",
+			" * Licensed under the Apache License, Version 2.0 (the \"License\");",
+			" * you may not use this file except in compliance with the License.",
+			" * You may obtain a copy of the License at",
+			" * ",
+			" *  http://www.apache.org/licenses/LICENSE-2.0",
+			" * ",
+			" * Unless required by applicable law or agreed to in writing, software",
+			" * distributed under the License is distributed on an \"AS IS\" BASIS,",
+			" * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
+			" * See the License for the specific language governing permissions and",
+			" * limitations under the License.",
+			" */",
+			"$0"
+		],
+		"description": "添加Apache版权"
+	},
+	"add note MPLCopyright": {
+		"prefix": ".nMPLCopyright",
+		"body": [
+			"/**",
+			" * Copyright 2018 黎慧剑",
+			" * ",
+			" * This Source Code Form is subject to the terms of the Mozilla Public",
+			" * License, v. 2.0. If a copy of the MPL was not distributed with this",
+			" * file, You can obtain one at http://mozilla.org/MPL/2.0/.",
+			" */",
+			"$0"
+		],
+		"description": "添加MPL版权"
+	}
+}
