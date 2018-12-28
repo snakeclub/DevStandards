@@ -63,6 +63,12 @@ Javascript代码规范
 
 
 
+## 服务器部署服务相关
+
+[Nginx安装部署手册](docs/web/Nginx安装部署手册.md)
+
+
+
 ## Maven相关
 
 [Maven学习总结(一)——Maven入门](docs/maven/maven-study1--beginer.md)
