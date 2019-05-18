@@ -49,6 +49,8 @@ My docs for dev tools install and code standards
 
 [Python中文文档翻译](https://yiyibooks.cn/)
 
+[python库使用指引-peewee](docs/python/python库使用指引-peewee.md)
+
 
 
 ## Javascript相关
