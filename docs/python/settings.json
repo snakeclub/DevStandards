@@ -5,7 +5,9 @@
     //python的autopep8格式化，限制最大宽度是100字符
     "python.formatting.autopep8Args": [
         "--max-line-length=100",
-        "--indent-size=4"
+        "--indent-size=4",
+        "--ignore",
+        "E402"
     ],
     // 保存时设置文件的格式。格式化程序必须可用，不能自动保存文件，并且不能关闭编辑器。
     "editor.formatOnSave": true,
