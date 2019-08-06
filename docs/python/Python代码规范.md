@@ -1023,4 +1023,50 @@ f = yield_test(10)
             break;
 ```
 
+### 避免类定义变量定义的坑
+
+在使用类内部定义的变量时，要注意变量的使用范围，对于引用类的对象（list、dict、object）如果定义不当，会造成相同类的不同实例化对象引用到同一个变量值的情况，造成执行结果与自己期望不同的问题。
+
+建议采用的规范如下：
+
+1、变量定义时不进行初始化，附None值；
+
+2、在\_\_ini\_\_函数对变量进行实际的初始化处理
+
+展示坑的示例如下：
+
+```
+class VarTestClass(object):
+    """
+    测试类局部变量的有效范围
+    """
+    li = list()
+    d = dict()
+    t = tuple()
+    s = 'string'
+    i = 10
+
+# 第一个实例对象，改变对象内变量的值
+c1 = VarTestClass()
+c1.li.append(1)
+c1.t = (333)
+c1.d['add'] = 2
+c1.s = 'change'
+c1.i = 22
+
+# 第二个实例对象，使用默认值，打印结果
+c2 = VarTestClass()
+print(c2.li)
+print(c2.t)
+print(c2.d)
+print(c2.s)
+print(c2.i)
+
+执行后输出的结果如下,可以看出，c2的list和dict变量被改变了：
+[1]
+()
+{'add': 2}
+string
+10
+```
 
