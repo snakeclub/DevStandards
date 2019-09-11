@@ -122,7 +122,7 @@ openssl pkcs12 -export  -password pass:123456 -in server.crt  -inkey rsa_private
 
 **签名摘要算法**
 
-![img](/media/openssl/1.jpg)
+![](media/openssl/1.jpg)
 
 1.使用md5指定sha1算法，明文输出签名文件（所以建议做摘要和签名验证时使用dgst指令，以免误导）
 
