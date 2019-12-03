@@ -65,6 +65,12 @@ Javascript代码规范
 
 
 
+## MediaWiki相关
+
+[MediaWiki搭建手册.md](docs/mediawiki/MediaWiki搭建手册.md)
+
+
+
 ## 服务器部署服务相关
 
 [Nginx安装部署手册](docs/web/Nginx安装部署手册.md)
