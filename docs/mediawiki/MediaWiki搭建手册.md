@@ -111,6 +111,20 @@ ServerSignature Off
 </Directory>
 ```
 
+
+
+修改上传文件大小限制，修改文件路径：/usr/local/php7.3.1/etc/php.ini
+
+注：路径按安装不同，如果找不到，可以通过以下命令查找： find / -name php.ini
+
+修改以下两个参数项，调整为50M
+
+post_max_size = 50M
+
+upload_max_filesize = 50M
+
+
+
 重启Apache： systemctl restart httpd
 
 ### 附：Windows环境的安装方法
