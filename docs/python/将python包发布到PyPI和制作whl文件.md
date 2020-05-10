@@ -95,7 +95,7 @@ Platform: UNKNOWN
 终端定位到此文件夹下，输入以下命令，模块将会被安装到解释器对应的Lib/site-packages目录下：
 
 ```
-python setup.py install1
+python setup.py install
 ```
 
 安装后，会发现Lib/site-packages目录下存在printtest.py文件和printtest-1.0-py3.6.egg-info 
@@ -156,7 +156,7 @@ README.txt123456
 输入以下命令进行打包，制作source distribution（源代码发布包），此命令将会把所有内容在dist/目录打包为pagtest-1.0.0.tar.gz
 
 ```
-python setup.py sdist1
+python setup.py sdist
 ```
 
 4.上传到PyPI上。上传时，可以建立一个账户验证文件~/.pypirc（Windows不可以，因为文件命名中含有非法字符），也可以在上传时输入账户和密码。
@@ -171,10 +171,10 @@ username = <username>
 password = <password>1234567
 ```
 
-5.将命令行定位到此文件夹下，输入命令对dist目录下的pagtest-1.0.0.tar.gzt包进行上传，twine为Python包需要安装：
+5.将命令行定位到此文件夹下，输入命令对dist目录下的pagtest-1.0.0.tar.gzt包进行上传，twine为Python包需要安装（pip install twine）：
 
 ```
-twine upload dist/*1
+twine upload dist/*
 ```
 
 # 制作python包为wheel文件
@@ -183,13 +183,13 @@ wheel是一个已经编译好的包，在安装时不需要编译过程，安装
 在如上第2步后，输入如下命令即可在生成.whl
 
 ```
-python setup.py bdist_wheel1
+python setup.py bdist_wheel
 ```
 
 .whl文件在dist目录下，上传到PyPI：
 
 ```
-twine upload dist/*1
+twine upload dist/*
 ```
 
 # 更新Python包
