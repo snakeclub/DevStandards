@@ -65,6 +65,12 @@ Javascript代码规范
 
 
 
+## MediaWiki相关
+
+[MediaWiki搭建手册.md](docs/mediawiki/MediaWiki搭建手册.md)
+
+
+
 ## 服务器部署服务相关
 
 [Nginx安装部署手册](docs/web/Nginx安装部署手册.md)
@@ -108,6 +114,14 @@ Javascript代码规范
 [使用Maven编译项目遇到——“maven编码gbk的不可映射字符”解决办法](docs/maven/maven-studyx--gbk.md)
 
 [Nexus私有仓库搭建与Maven集成.md](docs/maven/Nexus私有仓库搭建与Maven集成.md)
+
+
+
+## 安全及加密
+
+[openssl安装及使用说明.md](docs/security/openssl安装及使用说明.md)
+
+[SSL&TSL原理.md](docs/security/SSL&TSL原理.md)
 
 
 

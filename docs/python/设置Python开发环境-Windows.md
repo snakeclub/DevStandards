@@ -85,10 +85,12 @@ yapf ："python.formatting.provider": "yapf"   -- 测试过程中发现yapf似�
 ### python.formatting.autopep8Args
 
 ```
-// python的autopep8格式化，限制最大宽度是100字符，缩进为4个空格
+// python的autopep8格式化，限制最大宽度是100字符，缩进为4个空格；忽略错误402，即：“模块级别导入不在文件顶部”
 "python.formatting.autopep8Args": [
   "--max-line-length=100",
-  "--indent-size=4"
+  "--indent-size=4",
+  "--ignore",
+  "E402"
 ]
 ```
 

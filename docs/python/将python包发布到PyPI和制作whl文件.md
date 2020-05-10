@@ -159,19 +159,7 @@ README.txt123456
 python setup.py sdist
 ```
 
-4.上传到PyPI上。上传时，可以建立一个账户验证文件~/.pypirc（Windows不可以，因为文件命名中含有非法字符），也可以在上传时输入账户和密码。
-
-```
-[distutils]
-index-servers=pypi
-
-[pypi]
-repository = https://upload.pypi.org/legacy/
-username = <username>
-password = <password>1234567
-```
-
-5.将命令行定位到此文件夹下，输入命令对dist目录下的pagtest-1.0.0.tar.gzt包进行上传，twine为Python包需要安装（pip install twine）：
+4.将命令行定位到此文件夹下，输入命令对dist目录下的pagtest-1.0.0.tar.gzt包进行上传，twine为Python包需要安装（安装过程需要输入pipy官网的用户名和密码，注册地址：https://pypi.org/）：
 
 ```
 twine upload dist/*
