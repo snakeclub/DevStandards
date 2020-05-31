@@ -89,6 +89,8 @@ Javascript代码规范
 
 [利用Docker快速部署Oracle环境.md](docs/docker/利用Docker快速部署Oracle环境.md)
 
+[Windows安装部署Docker.md](docs/docker/Windows安装部署Docker.md)
+
 
 
 ## Maven相关
