@@ -6,7 +6,7 @@ Git是一个版本控制系统（Version Control System，VCS），用于记录�
 
 Git的版本控制原理如下： 
 
-![](/media/git-introduce/01.png)
+![](media/git-introduce/01.png)
 
 
 
@@ -55,7 +55,7 @@ Github和GitLab的主要差异是：Github只提供基于互联网的代码托�
 
 下图中两位开发者的起点是同一个版本。之后两人各自做了修改，并提交了修改。这时候，对于这两位开发者各自的版本库来说，该项目已经有了两个不同的版本。也就是说，他们在这里创建了两个分支。接下来，如果其中一个开发者想要导入另一个人的修改，他/她就可以用Git来进行版本合并。如果合并成功了，Git就会创建一个合并提交，其中会包含两位开发者所做的修改。这时如果另一位开发者也取回了这一提交，两位开发者的项目就又回到了同一个版本。 
 
-![](/media/git-introduce/02.png)
+![](media/git-introduce/02.png)
 
 图*　因开发者的并行开发而出现的分支创建操作
 
@@ -63,7 +63,7 @@ Github和GitLab的主要差异是：Github只提供基于互联网的代码托�
 
 我们当然也可以开启有针对性的分支，即显式地创建一个分支（见下图）。显式分支通常主要用于协调某一种功能性的并行开发：
 
-![](/media/git-introduce/03.png)
+![](media/git-introduce/03.png)
 
 图*　针对不同任务的显式分支
 
@@ -77,7 +77,7 @@ Git本地库安装支持各类操作系统，但一般我们用Windows电脑进�
 
 1. 从Git官网下载“Git for Windows”的程序安装包（本示例版本为：Git-2.17.1.2-64-bit.exe），执行进行安装，除了代码编译工具选择VS Code外，其他均按默认选项安装；
 
-   ![](/media/git-introduce/04.png)
+   ![](media/git-introduce/04.png)
 
 2. 安装完成后，在开始菜单里找到“Git”->“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功； 选项安装；
 
@@ -273,7 +273,7 @@ origin
 
 Git仓库目录中的文件状态主要有UnTracked(未纳入版本管理)、Unmodified(纳入版本管理但无修改)、Modified（已修改未暂存）、Staged（已暂存），Staged状态的文件commit后会更新为Unmodified状态。文件状态的流转示意图如下： 
 
-![](/media/git-introduce/05.png)
+![](media/git-introduce/05.png)
 
 
 
@@ -594,10 +594,10 @@ $ git checkout --track origin/lb-pkg   (查到远程分支，可以通过该命�
 
 ### Github使用参考
 
-#### 在GitLab上创建项目
+#### 在Github上创建项目
 
 1. 在首页（https://github.com/）上点击“New Repository”按钮，添加一个新项目；
-    ![](/media/git-introduce/06.png)
+    ![](media/git-introduce/06.png)
 2. 输入项目名仓库（Repository name）、描述、选择公开还是私有（私有要收费）、选择导入README文档、选择忽略文件和许可类型，然后创建：
 3. 重新打开首页找到自己的仓库位置，点击“Clone or download”按钮，获取到服务端的提交协议地址：https://github.com/snakeclub/FCMM.git
 

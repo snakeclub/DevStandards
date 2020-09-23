@@ -127,6 +127,20 @@ Javascript代码规范
 
 
 
+## 机器学习相关
+
+[Anaconda安装使用手册.md](docs/ml/Anaconda安装使用手册.md)
+
+[TensorFlow安装部署及简单应用-Python.md](docs/ml/TensorFlow安装部署及简单应用-Python.md)
+
+[TensorFlow-Slim图像分类训练及应用.md](docs/ml/TensorFlow-Slim图像分类训练及应用.md)
+
+[机器学习基本概念及重要参数说明.md](docs/ml/机器学习基本概念及重要参数说明.md)
+
+[Milvus安装部署及问答应用示例.md](docs/ml/Milvus安装部署及问答应用示例.md)
+
+
+
 ## 临时参考材料
 
 ### 测试相关
