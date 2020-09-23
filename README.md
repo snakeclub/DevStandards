@@ -5,35 +5,35 @@ My docs for dev tools install and code standards
 
 ## GIT相关
 
-[git入门介绍](/docs/git/git入门介绍.md)
+[git入门介绍](docs/git/git入门介绍.md)
 
-[Github开源项目贡献流程](/docs/git/open-source-project-contribution-process.md)
+[Github开源项目贡献流程](docs/git/open-source-project-contribution-process.md)
 
-[Commitizen在Windows的安装使用手册](/docs/git/commitizen-windows.md)
+[Commitizen在Windows的安装使用手册](docs/git/commitizen-windows.md)
 
-[npm用法及离线安装方法](/docs/git/npm用法及离线安装方法.md)
+[npm用法及离线安装方法](docs/git/npm用法及离线安装方法.md)
 
 
 
 ## 接口规范
 
-[RESTful接口规范](/docs/api/RESTful接口规范.md)
+[RESTful接口规范](docs/api/RESTful接口规范.md)
 
-[RUDP协议简介](/docs/api/RUDP协议简介.md)
+[RUDP协议简介](docs/api/RUDP协议简介.md)
 
 [错误码规范](https://github.com/snakeclub/HiveNetLib/blob/master/docs/source/standards/hivenet_error_code_standards_v1.1.0.md)
 
-[日志规范]([hivenet_log_standards_v1.0.0.md](https://github.com/snakeclub/HiveNetLib/blob/master/docs/source/standards/hivenet_log_standards_v1.0.0.md))
+[日志规范](https://github.com/snakeclub/HiveNetLib/blob/master/docs/source/standards/hivenet_log_standards_v1.0.0.md)
 
 
 
 ## VSCode相关
 
-[VSCode 插件离线安装](/docs/vscode/VSCode 插件离线安装.md)
+[VSCode 插件离线安装](docs/vscode/VSCode 插件离线安装.md)
 
-[vscode编写插件详细过程](/docs/vscode/vscode编写插件详细过程.md)
+[vscode编写插件详细过程](docs/vscode/vscode编写插件详细过程.md)
 
-[VSCode快捷键大全](/docs/vscode/VSCode快捷键大全.md)
+[VSCode快捷键大全](docs/vscode/VSCode快捷键大全.md)
 
 
 
