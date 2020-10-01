@@ -133,6 +133,8 @@ Javascript代码规范
 
 [TensorFlow安装部署及简单应用-Python.md](docs/ml/TensorFlow安装部署及简单应用-Python.md)
 
+[TensorFlow-mask物体识别训练及应用.md](docs/ml/TensorFlow-mask物体识别训练及应用.md)
+
 [TensorFlow-Slim图像分类训练及应用.md](docs/ml/TensorFlow-Slim图像分类训练及应用.md)
 
 [机器学习基本概念及重要参数说明.md](docs/ml/机器学习基本概念及重要参数说明.md)
