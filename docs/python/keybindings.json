@@ -6,7 +6,7 @@
         "command": "editor.action.insertSnippet",
         "when": "editorTextFocus && resourceLangId == python",
         "args": {
-            "snippet": "@${1|readonly,static,abstract,override,interface [<name>],access <private/protected/public>,summary <Summary goes here>,api {action-type} <url> <api-name>,param {type} <paraname> - <descript>,returns {type} - <descript>,throws {exception-type} - <descript>,requires <someModuleName>,decorators <name> - [descript],example,typedef {(type1\\|type2)} typename - [type-descript],todo <text describing thing to do.>,since <versionDescription>,see <namepath/text]>,tutorial <tutorialID>,ignore,deprecated [<some text>],license <identifier>,copyright <some copyright text>,author <name> [<emailAddress>],since <versionDescription>,version <text>,module <fullname>,file <filename>,property {type},enum {type}|}"
+            "snippet": "@${1|readonly,static,abstract,override,interface [<name>],access <private/protected/public>,summary <Summary goes here>,api {action-type} {protocol} <url> <api-name>,param {type} <paraname> - <descript>,returns {type} - <descript>,throws {exception-type} - <descript>,header-in {type} <name> - <descript>,header-out {type} <name> - <descript>,body-in {type} <name> - <descript>,body-out {type} <name> - <descript>,sub-body-begin {block\\|option\\|repeat},sub-body-end,requires <someModuleName>,decorators <name> - [descript],example,typedef {(type1\\|type2)} typename - [type-descript],todo <text describing thing to do.>,since <versionDescription>,see <namepath/text]>,tutorial <tutorialID>,ignore,deprecated [<some text>],license <identifier>,copyright <some copyright text>,author <name> [<emailAddress>],since <versionDescription>,version <text>,module <fullname>,file <filename>,property {type},enum {type}|}"
         }
     },
     // 选择数据类型ctrl+shift+4
@@ -15,7 +15,7 @@
         "command": "editor.action.insertSnippet",
         "when": "editorTextFocus && resourceLangId == python",
         "args": {
-            "snippet": "${1|number,int,float,bool,complex,string,list,tuple,set,dict,object,function|}"
+            "snippet": "${1|number,int,float,bool,complex,str,string,list,tuple,set,dict,object,function|}"
         }
     },
     // 选择异常类型ctrl+shift+5

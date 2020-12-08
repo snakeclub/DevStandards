@@ -51,6 +51,8 @@ My docs for dev tools install and code standards
 
 [python库使用指引-peewee](docs/python/python库使用指引-peewee.md)
 
+[使用Numba编译器提升Python计算代码性能](docs/python/使用Numba编译器提升Python计算代码性能.md)
+
 
 
 ## Javascript相关
