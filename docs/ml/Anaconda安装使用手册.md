@@ -438,3 +438,19 @@ VS Code默认安装完成后接入的是机器本身的Python环境，但如果�
 conda config --set auto_activate_base false
 ```
 
+
+
+# 常见问题和处理方式
+
+## 新建虚拟环境仍使用base环境的python/pip
+
+这是由于创建虚拟环境时没有指定python的版本，不指定python版本的的情况，env文件夹下就没有bin文件夹，因此无法正常激活、使用，所以实际使用的还是base环境。
+
+解决方法：
+
+创建虚拟环境时指定python版本，例如：
+
+```
+conda create -n tf2 python=3.7.3
+```
+
