@@ -1,0 +1,6 @@
+# vscode
+.vscode-test/
+.vscode/
+
+# Mac
+.DS_Store/
