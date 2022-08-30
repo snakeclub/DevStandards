@@ -65,6 +65,8 @@ Javascript代码规范
 
 [ECMAScript 6 入门](http://es6.ruanyifeng.com/)
 
+[JS模版导入导出详解](docs/javascript/JS模版导入导出详解.md)
+
 
 
 ## MediaWiki相关

@@ -88,6 +88,72 @@ Anaconda [ˌænəˈkɑːndə] 是一个开源的数据科学工具管理平台�
 - 在终端中输入`python`。这条命令将会启动Python交互界面，如果Anaconda被成功安装并且可以运行，则将会在Python版本号的右边显示“Anaconda custom (64-bit)”。退出Python交互界面则输入`exit()`或`quit()`即可。
 - 在终端中输入`anaconda-navigator`。如果Anaconda被成功安装，则Anaconda Navigator将会被启动。
 
+# Linux安装手册-简单版（Centos7示例）
+
+1、需要先安装bzip2
+
+```
+yum install -y bzip2
+```
+
+2、到一个临时目录下载安装脚本和文件
+
+```
+cd /usr/tmp/
+wget https://repo.continuum.io/archive/Anaconda3-5.3.0-Linux-x86_64.sh
+```
+
+3、执行安装脚本，按提示一路选择yes即可
+
+```
+bash Anaconda3-5.3.0-Linux-x86_64.sh
+```
+
+4、刷新环境变量
+
+```
+source ~/.bashrc
+```
+
+5、执行 conda list 命令检查是否正常安装。
+
+# 设置国内镜像源
+
+1、查看已设置的镜像源：conda config --show-sources
+
+2、添加镜像源：conda config --add channels xxx
+
+```
+# 添加清华镜像源，注意清华源可以使用http而不是https
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+```
+
+3、删除defaults，避免仍然继续使用默认源处理
+
+```
+vi /root/.condarc
+# 删除 -defaults 
+```
+
+4、设置参数：
+
+```
+conda config --set show_channel_urls true
+conda config --set channel_priority false
+conda config --set ssl_verify false
+```
+
+5、移除镜像源：conda config --remove channels
+
+```
+conda config --remove channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+```
+
+6、恢复默认源：conda config --remove-key channels
+
 
 
 # 升级Conda
@@ -454,3 +520,11 @@ conda config --set auto_activate_base false
 conda create -n tf2 python=3.7.3
 ```
 
+## 连接国内源出现SSLError错误
+
+ttps协议比http协议多了SSL，TLS等验证和加密的阶段，可能是在与清华源进行SSL验证的过程中会出问题，因此需要关掉SSL验证，或者改用http协议。但是使用SSL验证是有助于保障传输过程的可靠性的。
+
+可以使用以下两种解决方案：
+
+- 在命令行中输入`conda config --set ssl_verify false`修改设置，或者在文件`~/.condarc`末尾添加一行`ssl_verify: false`（有则修改即可）
+- 将https改成http
