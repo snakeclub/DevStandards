@@ -22,6 +22,9 @@ $ docker run -itd --name mongo -p 27017:27017 mongo --auth
 ```
 # 使用卷持久化数据
 -v mongo-data:/data/db
+
+# 设置副本集群方案
+--replSet rs0
 ```
 
 3、使用以下命令添加用户和设置密码，并且尝试连接
@@ -38,6 +41,32 @@ $ docker exec -it mongo mongo admin
 
 # 设置了用户密码后再次连接数据库
 $ docker exec -it mongo mongo -u admin -p 123456 admin
+```
+
+## 部署单节点集群（单机开启事务支持）
+
+```
+ 在本机先创建keyfile
+cd /Users/lhj/software/mongo_keyfile
+openssl rand -base64 128 > ./keyFile
+chmod 600 ./keyFile 
+
+# 运行容器, 设置副本集群方案, 注意需要指定keyfile
+docker run -itd --name mongo -v /Users/lhj/software/mongo_keyfile:/mongo_keyfile -p 27017:27017 mongo --auth --replSet rs0 --keyFile /mongo_keyfile/keyFile
+
+# 第一次连接数据库
+$ docker exec -it mongo mongo admin
+# 初始化集群
+> rs.initiate()
+# 创建一个名为 admin，密码为 123456 的用户。
+> db.createUser({ user:'admin',pwd:'123456',roles:[ { role:'userAdminAnyDatabase', db: 'admin'},"readWriteAnyDatabase"]});
+# 尝试使用上面创建的用户信息进行连接。
+> db.auth('admin', '123456')
+# 创建具备所有权限的用户
+> db.createUser({ user:'root',pwd:'123456',roles:["root"]});
+
+# 连接数据库
+docker exec -it mongo mongo -u root -p 123456 admin
 ```
 
 ## 基本操作命令
