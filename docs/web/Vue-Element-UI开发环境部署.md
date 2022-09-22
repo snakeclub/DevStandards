@@ -2,22 +2,20 @@
 
 版本：Vue 3.x
 
-
-
 ## 安装依赖软件及编辑器
 
-**1、安装Node.js（v8.9或更高版本，建议v10以上）及npm**
+**1、安装Node.js（v16或更高版本）及npm**
 
 请自行查找安装教程，安装完成后可以通过以下命令查看版本：
 
 ```
 // 查看node版本
 > node -v
-v15.7.0
+v17.0.1
 
 // 查看npm版本
 > npm -v
-7.4.3
+8.1.2
 ```
 
 **注：请进来安装LST版本的Node.js，如过出现以下的webpack错误，可尝试更换Node的其他版本：Error: error:0308010C:digital envelope routines::unsupported at new Hash (node:internal/crypto/hash:67:19)**
@@ -74,38 +72,34 @@ Beautify ：代码格式美化
 
 （3）如果代码中存eslint提示的错误，例如： “Delete \`CR\` (ESLINT prettier)” ，可以通过命令行进入项目目录，然后执行 npm run lint --fix 命令修复文件格式。
 
-
-
-## 安装Vue Cli（脚手架）
-
-由于Vue CLI 的包名称由 `vue-cli`改成了`@vue/cli`，如果之前本地有安装`vue-cli`(1.x 或 2.x)的脚手架需要先进行卸载：
-
-```
-// 卸载vue-cli(1.x 或 2.x)
-> npm uninstall vue-cli
-
-// 安装@vue/cli(3.x+)
-> npm i -g @vue/cli -g
-
-// 检查安装版本
-> vue -V
-@vue/cli 4.5.13
-
-// 后续@vue/cli升级
-> npm update -g @vue/cli
-```
-
-vue cli的官方参考文档：https://cli.vuejs.org/zh/guide/
-
-
-
 ## Vue3.x与Vue2.x项目的一些重要限制区别
 
 1、element-ui并不支持Vue3.x，需改用element-plus；
 
-
-
 ## 创建Vue3项目
+
+1、输入命令创建项目
+
+    > cd 要创建项目的目录
+    > npm init vue@latest
+    Vue.js - The Progressive JavaScript Framework
+    
+    ? Project name: › vue-project
+    ✔ Project name: … vue_src
+    ✔ Add TypeScript? … No / Yes (选No)
+    ✔ Add JSX Support? … No / Yes （选Yes）
+    ✔ Add Vue Router for Single Page Application development? … No / Yes （选Yes）
+    ✔ Add Pinia for state management? … No / Yes  (选No)
+    ✔ Add Vitest for Unit Testing? … No / Yes （选Yes）
+    ✔ Add Cypress for End-to-End testing? … No / Yes  （选Yes）
+    ✔ Add ESLint for code quality? … No / Yes  （选Yes）
+    ✔ Add Prettier for code formatting? … No / Yes  （选Yes）
+
+2、构建工具会在当前目录下创建对应的项目和相关文件，可以按以下步骤安装依赖并启动开发服务器
+
+    > cd <your-project-name>
+    > npm install
+    > npm run dev
 
 1、输入命令创建项目
 
@@ -225,8 +219,6 @@ DONE  Compiled successfully in 1566ms                                           
 
 13、如果要编译为生产运行的应用，执行 `npm run build` ，将会生成对应web静态资源的文件到dist目录下。
 
-
-
 ## 重要配置文件
 
 ### babel.config.js
@@ -241,7 +233,7 @@ module.exports = {
   presets: [
     '@vue/cli-plugin-babel/preset'
   ],
-  
+
   // env定义环境模式下插件，此处定义的是development模式
   // dynamic-import-node插件（按需加载），需安装插件: npm install babel-plugin-dynamic-import-node
   env: {
@@ -251,8 +243,6 @@ module.exports = {
   },
 }
 ```
-
-
 
 ### 环境变量配置（.env.xxx）
 
@@ -313,11 +303,11 @@ module.exports = {
   publicPath: process.env.VUE_APP_URL,
   //这里在webpack配置时判断不同环境下使用不同配置
   configureWebpack: config => {
-	if (process.env.NODE_ENV === "development") {
-		config.devtool = "source-map";
-	} else if (process.env.NODE_ENV === "production") {
-		config.devtool = "eval-source-map";
-	}
+    if (process.env.NODE_ENV === "development") {
+        config.devtool = "source-map";
+    } else if (process.env.NODE_ENV === "production") {
+        config.devtool = "eval-source-map";
+    }
   },
   outputDir:process.env.VUE_APP_DIR
 }
@@ -381,7 +371,7 @@ export default {
     "build:prod": "vue-cli-service build",
     "build:stage": "vue-cli-service build --mode staging",
     "lint": "vue-cli-service lint"
-    
+
 、   # 待研究
     "preview": "node build/index.js --preview",
   },
@@ -437,8 +427,6 @@ npm install --save-dev packageName
 
 注：与根目录的 .browserslistrc 文件作用相同
 
-
-
 ### vue.config.js
 
 `vue.config.js` 是一个可选的配置文件，如果项目的 (和 `package.json` 同级的) 根目录中存在这个文件，那么它会被 `@vue/cli-service` 自动加载。
@@ -460,7 +448,7 @@ function resolve(dir) {
  * @type {import('@vue/cli-service').ProjectOptions}
  */
 module.exports = {
-	// 选项...
+    // 选项...
 
   // 部署应用包时的基本URL，如果应用部署在根目录下，应设置为"/"；如果应用被部署在一个子路径上，需要用这个选项指定这个子路径
   // 例如应用被部署在 https://www.my-app.com/my-app/，则设置 publicPath 为 /my-app/
@@ -518,15 +506,12 @@ module.exports = {
         return options;
       });
   },
-   
+
  ...
 };
-
 ```
 
-
-
-### .eslintrc.js
+### .eslintrc.cjs
 
 eslint格式及语法检查配置，参考配置如下：
 
@@ -727,7 +712,6 @@ module.exports = {
     'array-bracket-spacing': [2, 'never']
   }
 };
-
 ```
 
 ### .eslintignore
@@ -747,8 +731,6 @@ public
 *.vue
 ```
 
-
-
 ## 使用Vuex（4.x版本）
 
 参考文档：https://vuex.vuejs.org/zh/
@@ -766,8 +748,6 @@ Vuex 是一个专门为vue.js应用程序开发的状态管理模式。对于状
 - actions：异步操作。在组件中使用是$store.dispath('')
 
 - modules：store的子模块，为了开发大型项目，方便状态管理而使用的。这里我们就不解释了，用起来和上面的一样。
-
-  
 
 ### 安装
 
@@ -791,8 +771,6 @@ npm install es6-promise --save
 import 'es6-promise/auto'
 ```
 
-
-
 ### 基本使用
 
 在 ./src 目录下创建store.js文件（或创建store目录，并在 该目录下创建index.js），在该模块中创建Vuex的store对象（使用Vue Cli可自动创建该文件）：
@@ -808,7 +786,7 @@ export default createStore({
     count: 0,
     jsonObj: { prop1: 'p1'},
   },
-  
+
   // 获取基于state状态进行计算后的值，类似 vue 的 computed
   getters: {
     // 无入参方式，示例: 获取count值的平方
@@ -824,7 +802,7 @@ export default createStore({
       return getters.countSquare + 1;
     }
   },
-  
+
   // 状态值变更方法，注意所有方法都必须是同步方法
   mutations: {
     // 无入参的状态值变更方法
@@ -845,7 +823,7 @@ export default createStore({
       state.jsonObj = {...state.jsonObj, 'newProp1': 456}; // 使用新对象替换老对象，使用对象展开符的方式
     }
   },
-  
+
   // 状态值的异步变更动作
   actions: {
     // 通过执行 mutations 方法进行状态值变更
@@ -908,7 +886,6 @@ this.$store.dispatch({ type: 'incrementPayload', amount: 10 }); // 执行payload
 import store from './store'
 const currentCount = store.state.count;  // 获取 store的指定状态值
 ...
-
 ```
 
 ### actions组合及Promise模式
@@ -987,8 +964,6 @@ this.$store.state.b.xx; // -> 访问moduleB 的状态
 
 **注：在store中，只有state才会区分模块存储，而getters、mutations、actions都会合并在一起。**
 
-
-
 **getters**：与 state 不同的是，不同模块的 getters 会直接合并在 store.getters 下。**如果存在不同模块的getters重名的情况，Vuex 会报出 'duplicate getter key: [重复的getter名]' 错误**。
 
 ```javascript
@@ -1029,8 +1004,6 @@ const store = new Vuex.Store({
 console.log(this.$store.getters.maGetter); // 3
 console.log(this.$store.getters.mbGetter); // Hello Vuex
 ```
-
-
 
 **Mutations**：mutations 与 getters 类似，会直接合并在 store.mutations，直接通过 store.commit 触发。不同的是不同模块的 mutation 可以重名，不会报错；实际执行中，**在执行一个 store.commit 时，重名的 mutation 将会依次执行**（也就是会确保每个模块的变更都会被执行）。
 
@@ -1129,8 +1102,6 @@ this.$store.dispatch('maAction'); // Module A count: 1、Module B count: 3
 
 **注：除了state有全局和局部入参以外， getters、mutations、actions都是全局入参，可以直接访问其他模块所定义的函数。**
 
-
-
 **命名空间**：默认情况下，模块内部的 action、mutation 和 getter 是注册在**全局命名空间**的——这样使得多个模块能够对同一 mutation 或 action 作出响应。如果我们需要保持模块之间的独立性，可以在定义模块时增加 `namespaced: true` 属性，让模块注册到自有的命名空间上。
 
 命名空间对模块访问的影响见以下代码：
@@ -1159,23 +1130,23 @@ const store = new Vuex.Store({
           // 访问全局getters和命名空间内部getters
           getters.someGetter // -> 'foo/someGetter'
           rootGetters.someGetter // -> 'someGetter'
-          
-					// 触发全局actions和命名空间内部actions，通过指定第三个参数 { root: true }
+
+                    // 触发全局actions和命名空间内部actions，通过指定第三个参数 { root: true }
           dispatch('someOtherAction') // -> 'foo/someOtherAction'
           dispatch('someOtherAction', null, { root: true }) // -> 'someOtherAction'
-          
-					// 触发全局mutations和命名空间内部mutations，通过指定第三个参数 { root: true }
+
+                    // 触发全局mutations和命名空间内部mutations，通过指定第三个参数 { root: true }
           commit('someMutation') // -> 'foo/someMutation'
           commit('someMutation', null, { root: true }) // -> 'someMutation'
         }, // -> this.$store.dispatch('account/login')
-        
+
         // 在命名空间的模块内注册全局的actions，添加 root: true，并将这个 action 的定义放在函数 handler 中
         someAction: {
           root: true,
           handler (namespacedContext, payload) { ... } // -> 'someAction'
         }
       },
-      
+
       // 嵌套模块
       modules: {
         // 继承父模块的命名空间
@@ -1226,8 +1197,6 @@ if (store.hasModule('myModule')){
 }
 ```
 
-
-
 ## 单元测试
 
 参考文档：https://lmiller1990.github.io/vue-testing-handbook/zh-CN/
@@ -1258,8 +1227,6 @@ JTest参考文档：https://jestjs.io/zh-Hans/docs/getting-started
 
 （4）新增 tests/unit 的测试目录。
 
-
-
 在使用上，可以通过以下命令运行测试：
 
 ```
@@ -1270,8 +1237,6 @@ npm run test:unit ./tests/unit/a.spec.js
 ```
 
 **注意：测试文件必须放在 ./tests/unit/ 目录下，并且文件名必须以 .spec.js 结尾，否则会出现语法错误。**
-
-
 
 ## Vue3遇到的坑
 
@@ -1481,4 +1446,3 @@ vue路由切换和组件信息保存的机制较为复杂，同时iframe的页�
 （4）如果要保存某个页面不刷新，**v-for所对应的iframe数组所对应该页面的元素不能发生变化**，也就是应该通过push增加新iframe对象，通过splice删除数组中无需保存状态的iframe对象；注意如果修改了数组中对应元素的引用地址（例如“array[i] = 新配置”），这样即使新配置信息和原信息一样，也会触发vue的变量变动监听，导致组件重新刷新；
 
 （5）如果需要刷新iframe页面，可以在包含iframe标签的组件内部通过v-if来取消和包含iframe标签实现重新加载。
-
