@@ -8,29 +8,19 @@ Git的版本控制原理如下：
 
 ![](media/git-introduce/01.png)
 
-
-
 官网：<https://git-scm.com/>
 
 Pro Git在线文档：<https://git-scm.com/book/zh/v2>
-
-
 
 Github是在线的基于Git的代码托管服务，GitHub同时提供付费账户和免费账户。这两种账户都可以创建公开的代码仓库，但是付费账户也可以创建私有的代码仓库。
 
 官网：<https://github.com/>
 
- 
-
 GitLab是一个自托管的Git项目仓库，可以通过web界面进行访问公开的或者私人项目，拥有与GitHub类似的功能，能够浏览源代码，管理缺陷和注释，可以管理团队对仓库的访问。一般用于在企业内搭建git私服，git-ce是社区版，gitlab-ee是企业版，收费版。
 
 官网：<https://about.gitlab.com/>
 
- 
-
 Github和GitLab的主要差异是：Github只提供基于互联网的代码托管服务，对于免费用户只能创建公开代码仓库，因此更适合进行开源项目的代码托管；GitLab支持自行搭建内网的代码托管Web服务，适合企业内部的团队使用。
-
-
 
 ## 基本概念
 
@@ -41,15 +31,11 @@ Github和GitLab的主要差异是：Github只提供基于互联网的代码托�
 - **工作流版本库（workflow repository）**：工作流版本库通常只用于填充那些代表工作流中某种特定进展状态的修改，例如审核通过后的状态等。
 - **派生版本库（fork repository）**：该版本库主要用于从开发主线分离出某部分内容（例如，分离出那些开发耗时较长，不适合在一个普通发布周期中完成的内容），或者隔离出可能永远不会被包含在主线中的、用于实验的那部分开发进展。
 
-
-
 ### Git数据类型
 
 - **文件（即blob）**：这里既包含了文本也包含了二进制数据，这些数据将不以文件名的形式被保存。
 - **目录（即Tree）**：目录中保存的是与文件名相关联的内容，其中也会包含其他目录。
 - **版本（即commit）**：每一个版本所定义的都是相应目录的某个可恢复的状态。每当我们创建一个新的版本时，其作者、时间、注释以及其之前的版本都将会被保存下来。
-
-
 
 ### 分支的创建与合并
 
@@ -59,15 +45,11 @@ Github和GitLab的主要差异是：Github只提供基于互联网的代码托�
 
 图*　因开发者的并行开发而出现的分支创建操作
 
- 
-
 我们当然也可以开启有针对性的分支，即显式地创建一个分支（见下图）。显式分支通常主要用于协调某一种功能性的并行开发：
 
 ![](media/git-introduce/03.png)
 
 图*　针对不同任务的显式分支
-
-
 
 ## 本地库安装及使用
 
@@ -76,7 +58,7 @@ Git本地库安装支持各类操作系统，但一般我们用Windows电脑进�
 ### 安装部署
 
 1. 从Git官网下载“Git for Windows”的程序安装包（本示例版本为：Git-2.17.1.2-64-bit.exe），执行进行安装，除了代码编译工具选择VS Code外，其他均按默认选项安装；
-
+   
    ![](media/git-introduce/04.png)
 
 2. 安装完成后，在开始菜单里找到“Git”->“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功； 选项安装；
@@ -98,8 +80,6 @@ $ git config --global svn.pathnameencoding utf-8
 
 4. 安装完成后，可以通过`git config --list`命令查看配置信息。
 
-
-
 ### GIt命令参考（Git Bash）
 
 #### 获取帮助（git help）
@@ -117,8 +97,6 @@ $ man git-<verb>
 ```
 $ git help config
 ```
-
-
 
 #### 本地仓库管理（repository）
 
@@ -158,8 +136,6 @@ $ git clone ~/Desktop/GitTest/project1 project2
 $ git clone https://github.com/snakeclub/test.git
 ```
 
-
-
 #### 远程仓库管理（repository）
 
 ##### 查看远程仓库
@@ -183,8 +159,8 @@ origin
 
 ```
 $ git remote -v
-origin	https://github.com/schacon/ticgit (fetch)
-origin	https://github.com/schacon/ticgit (push)
+origin    https://github.com/schacon/ticgit (fetch)
+origin    https://github.com/schacon/ticgit (push)
 ```
 
 ##### 添加远程仓库
@@ -196,10 +172,10 @@ $ git remote
 origin
 $ git remote add pb https://github.com/paulboone/ticgit
 $ git remote -v
-origin	https://github.com/schacon/ticgit (fetch)
-origin	https://github.com/schacon/ticgit (push)
-pb	https://github.com/paulboone/ticgit (fetch)
-pb	https://github.com/paulboone/ticgit (push)
+origin    https://github.com/schacon/ticgit (fetch)
+origin    https://github.com/schacon/ticgit (push)
+pb    https://github.com/paulboone/ticgit (fetch)
+pb    https://github.com/paulboone/ticgit (push)
 ```
 
 ##### 从远程仓库中抓取与拉取
@@ -212,7 +188,7 @@ On branch master
 Your branch and 'origin/master' have diverged,
 and have 2 and 1 different commits each, respectively.
   (use "git pull" to merge the remote branch into yours)
-  
+
 $ git merge origin master
 Auto-merging README.md
 Merge made by the 'recursive' strategy.
@@ -269,13 +245,21 @@ $ git remote
 origin
 ```
 
+##### 修改远程仓库的地址
+
+如果远程仓库服务器地址发生了变化，或者需要通过代理方式使用不同的IP地址访问，可以通过修改git配置文件来改变远程仓库的地址。
+
+操作方法为修改Git仓库本地根目录下的配置文件：`vi .git/config`
+
+修改配置中的远程仓库地址信息即可。
+
+
+
 #### 文件操作相关命令（add\commit）
 
 Git仓库目录中的文件状态主要有UnTracked(未纳入版本管理)、Unmodified(纳入版本管理但无修改)、Modified（已修改未暂存）、Staged（已暂存），Staged状态的文件commit后会更新为Unmodified状态。文件状态的流转示意图如下： 
 
 ![](media/git-introduce/05.png)
-
-
 
 具体操作的命令说明如下：
 
@@ -296,11 +280,11 @@ $ cat .gitignore
 第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的。 第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。 此外，你可能还需要忽略 log，tmp 或者 pid 目录，以及自动生成的文档等等。 要养成一开始就设置好 .gitignore 文件的习惯，以免将来误提交这类无用的文件。
 
 文件 .gitignore 的格式规范如下：
-	所有空行或者以 ＃ 开头的行都会被 Git 忽略。
-	可以使用标准的 glob 模式匹配。
-	匹配模式可以以（/）开头防止递归。
-	匹配模式可以以（/）结尾指定目录。
-	要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。
+    所有空行或者以 ＃ 开头的行都会被 Git 忽略。
+    可以使用标准的 glob 模式匹配。
+    匹配模式可以以（/）开头防止递归。
+    匹配模式可以以（/）结尾指定目录。
+    要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。
 
 所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。 星号（\*）匹配零个或多个任意字符；[abc] 匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（?）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配（比如 [0-9] 表示匹配所有 0 到 9 的数字）。 使用两个星号（\*) 表示匹配任意中间目录，比如`a/**/z` 可以匹配 `a/z,` `a/b/z` 或 `a/b/c/z`等。
 
@@ -323,7 +307,6 @@ git rm 命令后面可以列出文件或者目录的名字，也可以使用 glo
 ```
 $ git rm log/\*.log
 ```
-
 
 注意到星号 \* 之前的反斜杠\\， 因为 Git 有它自己的文件模式扩展匹配方式，所以我们不用 shell 来帮忙展开。 此命令删除 log/ 目录下扩展名为 .log 的所有文件。 类似的比如：
 
@@ -388,25 +371,23 @@ $ git checkout -- <file>
 
 Table 1. git log --pretty=format 常用的选项 :
 
-| **选项** | **说明**                                    |
-| -------- | ------------------------------------------- |
-| %H       | 提交对象（commit）的完整哈希字串            |
-| %h       | 提交对象的简短哈希字串                      |
-| %T       | 树对象（tree）的完整哈希字串                |
-| %t       | 树对象的简短哈希字串                        |
-| %P       | 父对象（parent）的完整哈希字串              |
-| %p       | 父对象的简短哈希字串                        |
-| %an      | 作者（author）的名字                        |
-| %ae      | 作者的电子邮件地址                          |
-| %ad      | 作者修订日期（可以用 --date= 选项定制格式） |
-| %ar      | 作者修订日期，按多久以前的方式显示          |
-| %cn      | 提交者（committer）的名字                   |
-| %ce      | 提交者的电子邮件地址                        |
-| %cd      | 提交日期                                    |
-| %cr      | 提交日期，按多久以前的方式显示              |
-| %s       | 提交说明                                    |
-
-
+| **选项** | **说明**                     |
+| ------ | -------------------------- |
+| %H     | 提交对象（commit）的完整哈希字串        |
+| %h     | 提交对象的简短哈希字串                |
+| %T     | 树对象（tree）的完整哈希字串           |
+| %t     | 树对象的简短哈希字串                 |
+| %P     | 父对象（parent）的完整哈希字串         |
+| %p     | 父对象的简短哈希字串                 |
+| %an    | 作者（author）的名字              |
+| %ae    | 作者的电子邮件地址                  |
+| %ad    | 作者修订日期（可以用 --date= 选项定制格式） |
+| %ar    | 作者修订日期，按多久以前的方式显示          |
+| %cn    | 提交者（committer）的名字          |
+| %ce    | 提交者的电子邮件地址                 |
+| %cd    | 提交日期                       |
+| %cr    | 提交日期，按多久以前的方式显示            |
+| %s     | 提交说明                       |
 
 #### 版本标签（tag）
 
@@ -450,7 +431,6 @@ $ git tag -a v1.2 9fceb02
 $ git push origin v1.5
 ```
 
-
 如果想要一次性推送很多标签，也可以使用带有 `--tags` 选项的 git push 命令。 这将会把所有不在远程仓库服务器上的标签全部传送到那里。
 
 ```
@@ -489,8 +469,6 @@ To github.com:michaelliao/learngit.git
 $ git checkout -b version2 v2.0.0
 Switched to a new branch 'version2'
 ```
-
-
 
 #### 分支管理（branch）
 
@@ -552,7 +530,7 @@ Deleted branch hotfix (3a0874c).
 ##### 分支查看
 
 * ```
-$ git branch  （列出分支清单，分支前的 * 字符：它代表现在检出的那一个分支）
+  $ git branch  （列出分支清单，分支前的 * 字符：它代表现在检出的那一个分支）
   iss53
   
   - master
@@ -565,8 +543,8 @@ $ git branch  （列出分支清单，分支前的 * 字符：它代表现在检
     testing 782fd34 add scott to the author list in the readmes
   ```
 
-
 --merged 与 --no-merged 这两个有用的选项可以过滤这个列表中已经合并或尚未合并到当前分支的分支。 如果要查看哪些分支已经合并到当前分支，可以运行 `git branch --merged`：
+
 ```
 $ git branch --merged
   iss53
@@ -590,8 +568,6 @@ $ git checkout remotes/origin/lb-pkg   (直接切换到远程分支-在没有建
 $ git checkout --track origin/lb-pkg   (查到远程分支，可以通过该命令建立本地分支的关连追踪)
 ```
 
-
-
 ### Github使用参考
 
 #### 在Github上创建项目
@@ -600,8 +576,6 @@ $ git checkout --track origin/lb-pkg   (查到远程分支，可以通过该命�
     ![](media/git-introduce/06.png)
 2. 输入项目名仓库（Repository name）、描述、选择公开还是私有（私有要收费）、选择导入README文档、选择忽略文件和许可类型，然后创建：
 3. 重新打开首页找到自己的仓库位置，点击“Clone or download”按钮，获取到服务端的提交协议地址：https://github.com/snakeclub/FCMM.git
-
-
 
 #### 创建本地追踪目录及进行管理
 
@@ -618,7 +592,6 @@ git push origin master
 git remote show origin   # 查看分支情况
 ```
 
-
 （4）获取远程仓库分支内容并自动合并：`git pull origin` (拉取整个仓库)/ `git pull origin master` （拉取指定分支）；如果是只获取不自动合并，pull修改为fetch
 
 （5）创建开发分支：
@@ -629,7 +602,6 @@ git checkout -b tb-req-base-ver
 git push origin tb-req-base-ver
 ```
 
-
 （6）生成第一次版本：
 
 ```
@@ -637,15 +609,12 @@ npm run release -- --first-release
 git push --follow-tags origin master
 ```
 
-
 （7）生成后面的版本：
 
 ```
 npm run release
 git push --follow-tags origin master
 ```
-
-
 
 ### GitLab使用参考
 

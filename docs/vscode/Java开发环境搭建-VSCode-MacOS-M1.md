@@ -14,8 +14,6 @@
 
 **注：安装路径在 “/Library/Java/JavaVirtualMachines/zulu-11.jdk” ，如果要卸载，直接删除该目录即可“rm -rf /Library/Java/JavaVirtualMachines/zulu-11.jdk”**
 
-
-
 ## 安装Maven
 
 1、官网下载地址：https://maven.apache.org/download.cgi
@@ -58,8 +56,6 @@ vi ${MAVEN_HOME}/conf/settings.xml
 </mirror>
 ```
 
-
-
 ## VSCode设置
 
 1、安装java支持扩展插件，直接在应用市场搜索和安装 “Extension Pack for Java” 即可（注：该插件包含了几个主要的java开发插件）；
@@ -67,8 +63,6 @@ vi ${MAVEN_HOME}/conf/settings.xml
 2、安装spring boot支持扩展插件， 直接在应用市场搜索和安装“Spring Boot Extension”；
 
 3、安装 “Lombok Annotations Support for VS Code” 扩展插件；
-
-
 
 ## 基本使用 - 创建 Maven 项目
 
@@ -95,8 +89,6 @@ vi ${MAVEN_HOME}/conf/settings.xml
 <img src="Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-VSCode-MacOS-M1.assets/image-20220303153258869.png" alt="image-20220303153258869" style="zoom:50%;" />
 
 2、可以在命令窗口看到运行输出结果。
-
-
 
 ## 基本使用 - 创建 Spring Boot项目
 
@@ -142,16 +134,16 @@ public class HelloWorldController {
 ```
 ...
   <build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
           <mainClass>com.example.demo.DemoApplication</mainClass>
         </configuration>
-			</plugin>
-		</plugins>
-	</build>
+            </plugin>
+        </plugins>
+    </build>
 ```
 
 ### 编译打包运行
@@ -172,8 +164,6 @@ java -jar demo-0.0.1-SNAPSHOT.jar
 ```
 
 3、在浏览器打开以下网站，可以看到服务的输出：http://localhost:8088/hello
-
-
 
 ### 创建可供引入的 Spring Boot 工具 Jar 包
 
@@ -203,16 +193,16 @@ public class HelloWorldController {
 
 ```
    <build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
            <classifier>exec</classifier>
         </configuration>
-			</plugin>
-		</plugins>
-	</build>
+            </plugin>
+        </plugins>
+    </build>
 ```
 
 4、按通用编译打包方式进行编译，分别得到 provider-0.0.1-SNAPSHOT-exec.jar、provider-0.0.1-SNAPSHOT.jar 两个jar包，其中provider-0.0.1-SNAPSHOT.jar为引入包；
@@ -232,15 +222,15 @@ public class HelloWorldController {
         </dependency>
 2、在build的plugins下增加includeSystemScope参数，用于打包时将该jar包纳入主项目中：
     <plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>com.service.server.ServerApplication</mainClass>
-					<includeSystemScope>true</includeSystemScope>
-				</configuration>
-			</plugin>
-		</plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.service.server.ServerApplication</mainClass>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
+        </plugins>
 ```
 
 7、修改主项目的 Application入口类，增加ComponentScan自动扫描注解（注意项目自身的注解也需要通过指定包位置的方式设置）：
@@ -252,16 +242,14 @@ public class HelloWorldController {
 @ComponentScan(value = "com.service.provider")
 public class ServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ServerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ServerApplication.class, args);
+    }
 
 }
 ```
 
 8、编译启动主项目后，可以分别通过/hello和/jar/hello访问不同的服务函数。
-
-
 
 ```
 http://localhost:8088/server/hello
